@@ -34,10 +34,10 @@ class ImagePresenter(val view: ImageContract.View) :ImageContract.Presenter{
         }
     }
     override fun start() {
-//        loadImages()
+        loadImages()
     }
 
     override fun stop() {
-        TODO("Not yet implemented")
+        //Add cleanup when needed
     }
 }

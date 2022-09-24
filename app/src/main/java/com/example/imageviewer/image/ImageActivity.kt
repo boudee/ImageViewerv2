@@ -19,10 +19,10 @@ class ImageActivity : AppCompatActivity() ,ImageContract.View {
         imagePresenter?.start()
         binding?.imageRecycler?.layoutManager = LinearLayoutManager(this)
         binding?.imageRecycler?.adapter = ImageAdapter(this)
-        imagePresenter?.loadImages()
         binding?.swipeToRefresh?.setOnRefreshListener {
             imagePresenter?.loadImages()
         }
+
 
     }
 
@@ -31,7 +31,6 @@ class ImageActivity : AppCompatActivity() ,ImageContract.View {
     }
 
     override fun updateView(photos: MutableList<PhotoViewModel>) {
-
         (binding?.imageRecycler?.adapter as ImageAdapter).imageList = photos
         binding?.imageRecycler?.adapter?.notifyDataSetChanged()
      }
